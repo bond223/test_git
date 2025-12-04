@@ -19,3 +19,4 @@ pg_dump -h localhost -d p2plending_db -U postgres -t lms-Config > lms_config.sql
 kubectl get pods -n p2p
 kubectl top pods -n p2p
 CI/CD is ery important to automate the application to deploy in the kubernetes
+Intergations tools like, git, jenkins, maven to gradle build
