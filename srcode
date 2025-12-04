@@ -20,3 +20,4 @@ kubectl get pods -n p2p
 kubectl top pods -n p2p
 CI/CD is ery important to automate the application to deploy in the kubernetes
 Intergations tools like, git, jenkins, maven to gradle build
+automatically we can deploy the application using the CI/CD pipeline .
