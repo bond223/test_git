@@ -14,3 +14,5 @@ CREATE OR REPLACE VIEW public.vwfundscommitted AS
                    FROM m_lenders l
                   WHERE l.lender_id::text = f.lender_id::text))) AS lender_name
    FROM lms_t_funds_committed f;;
+psql -h localhost -d postgres -U postgres 
+pg_dump -h localhost -d p2plending_db -U postgres -t lms-Config > lms_config.sql
