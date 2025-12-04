@@ -1,3 +1,16 @@
-hello git
-hello github
-settings > developers setting > tokens > generate the classic tokens push to github
+CREATE OR REPLACE VIEW public.vwfundscommitted AS 
+ SELECT lender_no,
+    lender_id,
+    funding_committed,
+    txn_date,
+    loan_listing_number,
+    funding_withdrawn,
+    ( SELECT ll.loan_req_number
+           FROM lms_m_loan_listing ll
+          WHERE ll.loan_listing_number::text = f.loan_listing_number::text) AS loan_req_number,
+    ( SELECT m.firstname
+           FROM m_member m
+          WHERE m.id = (( SELECT l.memmid
+                   FROM m_lenders l
+                  WHERE l.lender_id::text = f.lender_id::text))) AS lender_name
+   FROM lms_t_funds_committed f;;
